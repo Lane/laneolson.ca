@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 
 var SRC = { 
   JS:           ['src/js/*.js'],
-  EXTERNAL_JS:  ['src/js/external/**/*.js'],
+  EXTERNAL_JS:  ['src/js/external/**/*.js', 'src/js/external/**/*.map'],
   LESS:         ['src/less/style.less'],
   HTML:         ['src/**/*.html'],
   ASSETS:       ['src/assets/**/*']
