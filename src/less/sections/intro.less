@@ -48,6 +48,7 @@
 		top:50%;
 		left:0;
 		right:0;
+    width:100%;
 		margin-top:-113px;
 		z-index:2;
 	}
@@ -110,7 +111,7 @@
       position:relative;
 
       // Dots
-      &:after {
+      &:first-child:after {
         content: "";
         width:4px;
         height:4px;
@@ -121,10 +122,6 @@
         top:11px;
       }
 
-      // Remove last dot
-      &:last-child:after {
-        display:none;
-      }
     }
   }
 
@@ -204,6 +201,27 @@
   }
 }
 
+
+@media (min-width:363px) {
+  .intro {
+  // Tagline
+  h2 {
+    span {
+      // Dots
+      &:nth-child(2):after {
+        content: "";
+        width:4px;
+        height:4px;
+        background:#fff;
+        border-radius:4px;
+        position:absolute;
+        right:-16px;
+        top:11px;
+      }
+    }
+  }
+}
+}
 
 // PICTURE
 
