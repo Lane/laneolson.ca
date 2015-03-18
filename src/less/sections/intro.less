@@ -1,0 +1,228 @@
+
+.intro {
+	position:relative;
+  overflow:hidden;
+	padding-top:128px;
+	height:480px;
+}
+
+// HEADER BACKGROUND
+
+.background-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+  top:0px;
+}
+
+.background-img {
+  position:absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background: url(../assets/img/portfolio-bg.jpg);
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  background-repeat:no-repeat;
+}
+
+// END HEADER BACKGROUND IMAGE
+
+
+
+// INTRO POSITIONING
+
+.intro {
+	.content {
+		position:absolute;
+		top:50%;
+		left:0;
+		right:0;
+		margin-top:-113px;
+		z-index:2;
+	}
+}
+
+// END INTRO
+
+
+// HEADING
+
+.intro {
+	&:before {
+    content:"";
+    position:absolute;
+    z-index:1;
+    top:0;right:0;left:0; bottom:0;
+    background-image: linear-gradient( rgba(0,0,0,0.15), rgba(0,0,0,0.9)); 
+  }
+	h1 {
+		font-size: 38px;
+		font-weight:200;
+		letter-spacing:4px;
+		text-shadow: 0 0 6px #fff;
+		text-align:center;
+		position:relative;
+		line-height:1;
+		margin-bottom:32px;
+	}
+}
+
+@media (min-width: 500px) {
+  .intro {
+  		height:100%;
+  		min-height:480px;
+    h1 {
+      font-size: 64px;
+      font-weight:100;
+    }
+  }
+}
+
+@media (min-width: 680px) {
+  .intro {
+    h1 {
+      font-size: 96px;
+      font-weight:100;
+    }
+  }
+}
+
+// END  HEADING
+
+.intro {
+  // Tagline
+  h2 {
+    text-align: center;
+    span {
+      display:inline-block;
+      margin: 12px;
+      position:relative;
+
+      // Dots
+      &:after {
+        content: "";
+        width:4px;
+        height:4px;
+        background:#fff;
+        border-radius:4px;
+        position:absolute;
+        right:-16px;
+        top:11px;
+      }
+
+      // Remove last dot
+      &:last-child:after {
+        display:none;
+      }
+    }
+  }
+
+  // Social media icons
+  nav {
+    position:absolute;
+    left:0;right:0;bottom:0;
+    z-index:3;
+    .sansSerifFont();
+    text-transform:uppercase;
+    font-weight:400;
+    text-align:center;
+    margin:auto;
+    ul {
+      max-width:580px;
+      margin:auto;
+    }
+    li {
+      line-height:64px;
+      display:block;
+      text-align:center;
+      vertical-align: middle;
+      width:20%;
+      float:left;
+      height:64px;
+      &:first-child {
+        text-align:left;
+      }
+      &:last-child {
+        text-align:right;
+      }
+    }
+    a {
+      text-decoration:none;
+      display:block;
+      margin:auto;
+      color:#fff;
+      transition: all 0.5s ease-out;
+      width:64px;
+      height:64px;
+      text-align:center;
+      i {
+        font-size:32px;
+        position:relative;
+        top:0;
+        display:block;
+        width:64px;
+        height:32px;
+        overflow:hidden;
+        transition: all 0.2s ease-in-out;
+      }
+      i.icon-bandcamp {
+        font-size:48px;
+        line-height:36px;
+      }
+      span {
+        opacity:0;
+        border-top:1px solid #fff;
+        font-size:12px;
+        display:inline-block;
+        line-height: 30px;
+        position: relative;
+        top: -18px;
+        transition: all 0.2s ease-in-out;
+      }
+      &:hover {
+        i {
+          height:20px;
+          top:-10px;
+        }
+        span {
+          opacity:1;
+          top:-28px;
+        }
+      }
+    }
+  }
+}
+
+
+// PICTURE
+
+.profile-image {
+  width:100px;
+  height:100px;
+  border-radius:50px;
+  margin: 24px auto 0;
+  overflow:hidden;
+  position:relative;
+  border:2px solid rgba(255,255,255,0.85);
+  img {
+    width:125px;
+    height:125px;
+    max-width:none;
+    position:absolute;
+    top:0;
+    right:0;
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover {
+    img {
+      right:-25px;
+      top:-25px;
+    }
+  }
+}

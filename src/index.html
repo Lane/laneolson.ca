@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="portfolio">
+<head>
+  <meta charset="UTF-8">
+  <title>Lane Olson</title>
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700|Raleway:100,200,400' rel='stylesheet' type='text/css'>
+  <link href='css/style.css' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="initial-scale=1,width=device-width">
+  <script src="js/external/libs/modernizr/modernizr.js"></script>
+</head>
+
+<body>
+
+  <header id="intro" class="intro">
+    <div class="background-container">
+      <div id="headerBg" class="background-img"></div>
+    </div>
+    <div class="grid content">
+      <h1>Lane Olson</h1>
+      <h2 class="subhead">
+        <span>Designer</span>
+        <span>Developer</span>
+        <span>Musician</span>
+      </h2>
+      <div class="profile-image">
+        <img src="assets/img/rusty.jpg" />
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="http://codepen.io/Lane/" target="_blank">
+            <i class="icon-codepen"></i>
+            <span>Codepen</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Lane" target="_blank">
+            <i class="icon-github2"></i>
+            <span>Github</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.twitter.com/laneolson" target="_blank">
+            <i class="icon-twitter"></i>
+            <span>Twitter</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://rustyedmonton.bandcamp.com/" target="_blank">
+            <i class="icon-bandcamp"></i>
+            <span>Bandcamp</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://ca.linkedin.com/in/lanegolson" target="_blank">
+            <i class="icon-linkedin2"></i>
+            <span>Linked In</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header> 
+
+  <section id="portfolio" class="portfolio">
+    <h1>Portfolio</h1>
+    <div class="grid">
+      <div class="row" ng-controller="PortfolioController">
+        <div ng-repeat="item in items" class="column">
+          <div class="portfolio-item flip-container" ng-class="item.className">
+            <div class="flipper" ng-click="flipCard(item)">
+              <div class="front">
+                <div class="portfolio-image">
+                  <img ng-src="{{item.image}}" />
+                </div>
+                <div class="portfolio-content">
+                  <h2>{{item.name}}</h2>
+                  <p>{{item.type}}</p>
+                </div>
+              </div>
+              <div class="back">
+                <div class="portfolio-content">
+                  <p ng-bind-html="item.description"></p>
+                </div>
+                <div class="portfolio-action">
+                  <a href="{{item.url}}" target="_blank"><span>View {{item.name}}</span><i class="icon-chevron-small-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>Built using <a href="https://angularjs.org/">AngularJS</a>, <a href="http://lesscss.org">LESS</a>, <a href="http://gulpjs.com/">Gulp</a>, and <a href="http://bower.io/">Bower</a>.  <br />Check it out the repo on GitHub for more details.</p>
+      <div class="copyright">
+        <p>Copyright &copy; Lane Olson, 2015</p>
+        <a href="#">Return to top</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Page Scripts -->
+  </div>
+  <script type="text/javascript" src="js/external/libs/angular/angular.min.js"></script>
+  <script type="text/javascript" src="js/external/libs/gsap/src/minified/TweenMax.min.js"></script>
+  <script src="js/external/libs/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+  <script src="js/external/libs/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
