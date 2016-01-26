@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Lane Olson</title>
-  <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700|Raleway:100,200,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700|Lato:400,300,700' rel='stylesheet' type='text/css'>
   <link href='css/style.css' rel='stylesheet' type='text/css'>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -21,11 +21,10 @@
       <div id="headerBg" class="background-img"></div>
     </div>
     <div class="grid content">
-      <h1>Lane Olson</h1>
+      <h1><span class="kern">L</span>ane Olson</h1>
       <h2 class="subhead">
         <span>Designer</span>
         <span>Developer</span>
-        <span>Musician</span>
       </h2>
       <div class="profile-image">
         <img src="assets/img/rusty.jpg" />
@@ -52,12 +51,6 @@
           </a>
         </li>
         <li>
-          <a href="http://rustyedmonton.bandcamp.com/" target="_blank">
-            <i class="icon-bandcamp"></i>
-            <span>Bandcamp</span>
-          </a>
-        </li>
-        <li>
           <a href="http://ca.linkedin.com/in/lanegolson" target="_blank">
             <i class="icon-linkedin2"></i>
             <span>Linked In</span>
@@ -65,7 +58,7 @@
         </li>
       </ul>
     </nav>
-  </header> 
+  </header>
 
   <section id="portfolio" class="portfolio">
     <h1>Portfolio</h1>
@@ -87,8 +80,11 @@
                 <div class="portfolio-content">
                   <p ng-bind-html="item.description"></p>
                 </div>
-                <div class="portfolio-action">
+                <div ng-show="item.url" class="portfolio-action">
                   <a href="{{item.url}}" target="_blank"><span>View {{item.name}}</span><i class="icon-chevron-small-right"></i></a>
+                </div>
+                <div ng-show="!item.url" class="portfolio-action" style="background:#ccc;">
+                  <a style="color:#666">Work in progress</a>
                 </div>
               </div>
             </div>
